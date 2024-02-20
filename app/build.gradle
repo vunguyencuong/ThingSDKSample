@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+
+}
+apply from: "thingMapping.gradle"
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('../app/key/key_tuya')
+            storePassword 'Vht@123'
+            keyAlias 'vHome'
+            keyPassword 'Vht@123'
+        }
+    }
+
+    compileSdkVersion 33
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.viettel.VTHome.dev"
+        minSdkVersion 23
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+    }
+
+    packagingOptions {
+        pickFirst 'lib/*/libc++_shared.so'
+        pickFirst 'lib/*/libyuv.so'
+        pickFirst 'lib/*/libopenh264.so'
+        pickFirst 'lib/*/liblog.so'
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    configurations.all {
+        exclude group: "com.thingclips.smart", module: "thingplugin-annotation"
+        exclude group: "com.thingclips.android.module", module: "thingmodule-annotation"
+        exclude group: "com.thingclips.smart", module: 'thingsmart-modularCampAnno'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0-alpha04'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.alibaba:fastjson:1.1.67.android'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.14.9'
+
+    implementation project(':base_res')
+    implementation project(":home")
+    implementation project(":device_config")
+    implementation project(":device_management")
+    implementation project(":ipc")
+    implementation project(":sweeper")
+    implementation project(":ble_lock")
+
+    implementation 'cn.yipianfengye.android:zxing-library:2.2'
+
+}

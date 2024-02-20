@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hieunt.test.sample.device.mgt">
+
+    <application>
+        <activity
+            android:name="com.hieunt.test.sample.device.mgt.list.activity.DeviceMgtListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hieunt.test.sample.device.mgt.control.activity.DeviceMgtControlActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hieunt.test.sample.device.mgt.list.activity.DeviceSubZigbeeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.hieunt.test.sample.device.mgt.group.GroupCreateActivity"
+            android:exported="false" />
+        <activity android:name="com.hieunt.test.sample.device.mgt.group.GroupControlActivity"
+            android:exported="false"/>
+        <activity android:name="com.hieunt.test.sample.device.mgt.group.GroupListActivity"
+            android:exported="false"/>
+        <activity android:name="com.hieunt.test.sample.device.mgt.group.GroupDeviceListActivity"
+            android:launchMode="singleTask"
+            android:exported="false"/>
+    </application>
+</manifest>

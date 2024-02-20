@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hieunt.test.sample">
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:name="com.hieunt.test.sample.BaseApplication"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        tools:replace="android:allowBackup,android:supportsRtl">
+
+        <meta-data
+            android:name="THING_SMART_APPKEY"
+            android:value="nnukrtqs3cgtdvsqaymq" />
+        <meta-data
+            android:name="THING_SMART_SECRET"
+            android:value="qujexx8pyafsk94ctamkqcpqam9wg5mk" />
+
+        <!--        Main        -->
+        <activity
+            android:name="com.hieunt.test.sample.main.MainSampleListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!--        User        -->
+        <activity
+            android:name="com.hieunt.test.sample.user.main.UserFuncActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.hieunt.test.sample.user.login.UserLoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hieunt.test.sample.user.register.UserRegisterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hieunt.test.sample.user.resetPassword.UserResetPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hieunt.test.sample.user.info.UserInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
