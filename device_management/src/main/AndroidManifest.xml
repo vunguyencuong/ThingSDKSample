@@ -4,25 +4,33 @@
 
     <application>
         <activity
-            android:name="com.hieunt.test.sample.device.mgt.list.activity.DeviceMgtListActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.hieunt.test.sample.device.mgt.control.activity.DeviceMgtControlActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.hieunt.test.sample.device.mgt.list.activity.DeviceSubZigbeeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity android:name="com.hieunt.test.sample.device.mgt.group.GroupCreateActivity"
+            android:name=".add.AddDeviceByGatewayActivity"
             android:exported="false" />
-        <activity android:name="com.hieunt.test.sample.device.mgt.group.GroupControlActivity"
-            android:exported="false"/>
-        <activity android:name="com.hieunt.test.sample.device.mgt.group.GroupListActivity"
-            android:exported="false"/>
-        <activity android:name="com.hieunt.test.sample.device.mgt.group.GroupDeviceListActivity"
-            android:launchMode="singleTask"
-            android:exported="false"/>
+        <activity
+            android:name=".list.activity.DeviceMgtListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".control.activity.DeviceMgtControlActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".list.activity.DeviceSubZigbeeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.GroupCreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".group.GroupControlActivity"
+            android:exported="false" />
+        <activity
+            android:name=".group.GroupListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".group.GroupDeviceListActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
     </application>
+
 </manifest>

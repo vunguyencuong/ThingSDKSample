@@ -63,11 +63,11 @@ public class DeviceMgtListActivity extends AppCompatActivity {
         type = getIntent().getIntExtra("type", 0);
 
 
-        Toolbar toolbar = findViewById(R.id.topAppBar);
-        setSupportActionBar(toolbar);
-        toolbar.setNavigationOnClickListener(v -> finish());
-        toolbar.setTitle(type == 1 ? getString(R.string.device_mgt_list) :
-                getString(R.string.device_zb_gateway_list));
+//        Toolbar toolbar = findViewById(R.id.topAppBar);
+//        setSupportActionBar(toolbar);
+//        toolbar.setNavigationOnClickListener(v -> finish());
+//        toolbar.setTitle(type == 1 ? getString(R.string.device_mgt_list) :
+//                getString(R.string.device_zb_gateway_list));
 
         RecyclerView rvList = findViewById(R.id.rvList);
         rvList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));

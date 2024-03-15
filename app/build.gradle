@@ -60,6 +60,9 @@ android {
         exclude group: "com.thingclips.android.module", module: "thingmodule-annotation"
         exclude group: "com.thingclips.smart", module: 'thingsmart-modularCampAnno'
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -86,5 +89,4 @@ dependencies {
     implementation project(":ble_lock")
 
     implementation 'cn.yipianfengye.android:zxing-library:2.2'
-
 }
